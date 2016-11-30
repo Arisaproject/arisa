@@ -12,8 +12,8 @@ namespace พี่โค้ด
 {
     public partial class Form1 : Form
     {
-        public static double sum;
-        String[] st = { "ประเทศบรูไน", "ดารุสซาลาม", "ประเทศกัมพูชา", "ประเทศอินโดนีเซีย", "ประเทศลาว", "ประเทศมาเลเซีย", "ประเทศเมียนมาร์", "ประเทศฟิลิปปินส์", "ประเทศสิงคโปร์", "ประเทศเวียดนาม", "ประเทศไทย" };
+        public static double sum;//ประกาศ sum เป็น attribute
+        String[] st = { "ประเทศบรูไน", "ดารุสซาลาม", "ประเทศกัมพูชา", "ประเทศอินโดนีเซีย", "ประเทศลาว", "ประเทศมาเลเซีย", "ประเทศเมียนมาร์", "ประเทศฟิลิปปินส์", "ประเทศสิงคโปร์", "ประเทศเวียดนาม", "ประเทศไทย" };//ประกาศให้ประเทศต่าง ๆ เป็น array ชื่อว่า st
         public Form1()
         {
             InitializeComponent();
@@ -26,23 +26,24 @@ namespace พี่โค้ด
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("คุณต้องการออกจากหน้านี้หรือไม่?", "!!!!", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("คุณต้องการออกจากหน้านี้หรือไม่?", "!!!!", MessageBoxButtons.OKCancel) == DialogResult.OK)//ถ้าตรงกับเงื่อนไข "คุณต้องการออกจากหน้านี้หรือไม่?", "!!!!", MessageBoxButtons.OKCancel ให้ออกจากหน้านี้
             {
-                this.Close();
-                Form3 sh3 = new Form3();
-                sh3.Show();
+                this.Close();//ปิดหน้านี้
+                Form3 sh3 = new Form3();//ประกาศเรียกใช้ Form3
+                sh3.Show();//โชว์ Form3
             }
-            string sum = textBox3.Text;
+            string sum = textBox3.Text;//รับค่าจาก textBox3 มาใส่ใน sum
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("คุณต้องการจะเคลียร์ข้อมูลหรือไม่?", "!!!!", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("คุณต้องการจะเคลียร์ข้อมูลหรือไม่?", "!!!!", MessageBoxButtons.OKCancel) == DialogResult.OK)//ถ้าตรงกับเงื่อนไข "คุณต้องการจะเคลียร์ข้อมูลหรือไม่?", "!!!!", MessageBoxButtons.OKCancel ให้เคลียร์ข้อมุล
             {
-                comboBox1.Text = "";
-                textBox1.Clear();
-                textBox2.Clear();
-                textBox3.Clear();
+                comboBox1.Text = "";//เคลียร์ข้อความใน comboBox1
+                comboBox2.Text = "";//เคลียร์ข้อความใน comboBox2
+                textBox1.Clear();//เคลียร์ข้อความใน textBox1
+                textBox2.Clear();//เคลียร์ข้อความใน textBox2
+                textBox3.Clear();//เคลียร์ข้อความใน textBox3
             }
         }
 
@@ -50,29 +51,29 @@ namespace พี่โค้ด
         {
             try
             {
-                string str, str2;
-                str = (String)comboBox1.SelectedItem;
-                str2 = (String)comboBox2.SelectedItem;
-                if (str.Equals(str2))
+                string str, str2;//ประกาศตัวแปรชื่อ str , str2
+                str = (String)comboBox1.SelectedItem;//str = ข้อความใน comboBox1
+                str2 = (String)comboBox2.SelectedItem;//str2 = ข้อความใน comboBox2
+               if (str.Equals(str2))//เช็คเงื่อนไขว่าถ้า str = str2 จะให้ comboBox1 กับ comboBox2 มีค่า -1
                 {
-                    comboBox2.SelectedIndex = -1;
-                    comboBox1.SelectedIndex = -1;
-                    return;
+                    comboBox2.SelectedIndex = -1;// comboBox2 มีค่าเป็น -1
+                    comboBox1.SelectedIndex = -1;// comboBox1 มีค่าเป็น -1
+                    return;//จบไม่ทำต่อ
                 }
-                switch (str)
+                switch (str)//เช็คเงื่อนไขใน str
                 {
-                    case "ประเทศบรูไน ดารุสซาลาม":
+                    case "ประเทศบรูไน ดารุสซาลาม"://ถ้าเลือก ประเทศบรูไน ดารุสซาลาม จะเซ็ตค่าใน textBox2 เป็น 2000
                         textBox2.Text = "2000";
-                        break;
-                    case "ประเทศกัมพูชา":
+                        break;//หยุด
+                    case "ประเทศกัมพูชา"://ถ้าเลือก ประเทศกัมพูชา จะเซ็ตค่าใน textBox2 เป็น 2500
                         textBox2.Text = "2500";
-                        break;
-                    case "ประเทศอินโดนีเซีย":
+                        break;//หยุด
+                    case "ประเทศอินโดนีเซีย"://ถ้าเลือก ประเทศอินโดนีเซีย จะเซ็ตค่าใน textBox2 เป็น 1000
                         textBox2.Text = "1000";
-                        break;
-                    case "ประเทศลาว":
+                        break;//หยุด
+                    case "ประเทศลาว"://ถ้าเลือก ประเทศลาว จะเซ็ตค่าใน textBox2 เป็น 1700
                         textBox2.Text = "1700";
-                        break;
+                        break;//หยุด
                     case "ประเทศมาเลเซีย":
                         textBox2.Text = "2300";
                         break;
@@ -94,7 +95,7 @@ namespace พี่โค้ด
 
                 }
             }
-            catch (Exception ex) { MessageBox.Show("ข้อมูลซ้ากัน"); }
+            catch (Exception ex) { MessageBox.Show("ข้อมูลซ้ากัน"); }//บอกว่าข้อมูลซ้ำกัน
         }
         private void label3_Click(object sender, EventArgs e)
         {
@@ -118,11 +119,11 @@ namespace พี่โค้ด
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double t1, t2;
-            t1 = double.Parse(textBox1.Text);
-            t2 = double.Parse(textBox2.Text);
-            sum = t1 * t2;
-            textBox3.Text = Convert.ToString(sum);
+            double t1, t2;//รับค่า t1 t2
+            t1 = double.Parse(textBox1.Text);//รับค่าจาก textBox1 มาใส่ใน t1
+            t2 = double.Parse(textBox2.Text);//รับค่าจาก textBox2 มาใส่ใน t2
+            sum = t1 * t2;//เก็บค่า t1 * t2 มาไว้ใน sum
+            textBox3.Text = Convert.ToString(sum);//เอาค่าใน sum มาแปลงเป็นข้อความมาแสดงใน textBox3
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -133,6 +134,11 @@ namespace พี่โค้ด
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

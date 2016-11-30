@@ -49,6 +49,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -69,7 +70,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(163, 498);
+            this.label2.Location = new System.Drawing.Point(163, 477);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 29);
             this.label2.TabIndex = 1;
@@ -132,7 +133,7 @@
             "20.00 น.",
             "22.00 น.",
             "26.00 น."});
-            this.comboBox2.Location = new System.Drawing.Point(353, 505);
+            this.comboBox2.Location = new System.Drawing.Point(344, 484);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(207, 24);
             this.comboBox2.TabIndex = 5;
@@ -299,6 +300,18 @@
             this.comboBox3.Size = new System.Drawing.Size(207, 24);
             this.comboBox3.TabIndex = 23;
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button2.ForeColor = System.Drawing.Color.Lime;
+            this.button2.Location = new System.Drawing.Point(691, 460);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 82);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "BACK";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -308,6 +321,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1312, 618);
             this.ControlBox = false;
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
@@ -359,5 +373,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button button2;
     }
 }
